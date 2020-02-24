@@ -1,16 +1,16 @@
 <?php 
     function validate($str){
-        return ValidatePass($str) && empty($str) && textsize($str);
+        return isEmpty($str) && checkSize($str);
     }
 
-    function empty($str){
+    function isEmpty($str){
         return trim(strlen($str) > 0);
     }
 
-    function textsize($str){
-        $min = 2;
+    function checkSize($str){
+        $min = 6;
+        $max = 12;
         return strlen($str) >= $min && strlen($str) <= $max;
     }
-    }
-    
+
 ?>

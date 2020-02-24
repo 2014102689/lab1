@@ -20,17 +20,17 @@
 
 	<div class="form_wrap">
 		<form action="transaction/signup.php" method="post">
-			<input type="text" name="Firstname" placeholder="First name">
-			<input type="text" name="Middlename"  placeholder="Middle name">
-			<input type="text" name="Lastname"  placeholder="Last name"><br>
-			<input type="text" name="Address"  placeholder="Address"><br>
+			<input type="text" name="fname" placeholder="First name">
+			<input type="text" name="mname"  placeholder="Middle name">
+			<input type="text" name="lname"  placeholder="Last name"><br>
+			<input type="text" name="address"  placeholder="Address"><br>
 			<input type="date" name="DOB"  placeholder="Date of Birth"><br>
 			<input type="text" name="POB"  placeholder="Place of Birth"><br>
 			<div>Gender</div>
 			<div>
 				<input type="radio" name="Gender">Male
 				<input type="radio" name="Gender">Female
-				<input type="radio" name="Gender">LGBTQ++<br>
+				<input type="radio" name="Gender">LGBTQ+<br>
 			</div>	
 			<input type="text" name="Guardian" placeholder="Gurdian"><br>
 			<input type="tel" name="ContactNumber" placeholder="+639123456789"><br>
