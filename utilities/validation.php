@@ -8,9 +8,18 @@
     }
 
     function checkSize($str){
-        $min = 6;
-        $max = 12;
-        return strlen($str) >= $min && strlen($str) <= $max;
+        $min = 2;
+        return strlen($str) >= $min;
+    }  
+    function checkIntLenBegin($intnum){
+        return BeginLen($intnum) && is_numeric($intnum) ;
     }
 
+    function BeginLen($intnum){
+        if (strpos($intnum,'+639') !== false && strlen($intnum)==13){
+            return true;
+        }else{
+            return false;
+        }
+    }
 ?>

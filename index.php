@@ -28,14 +28,14 @@
 			<input type="text" name="POB"  placeholder="Place of Birth"><br>
 			<div>Gender</div>
 			<div>
-				<input type="radio" name="Gender">Male
-				<input type="radio" name="Gender">Female
-				<input type="radio" name="Gender">LGBTQ+<br>
+				<input type="radio" name="Gender" value="Male">Male
+				<input type="radio" name="Gender" value="Female">Female
+				<input type="radio" name="Gender" value="LGBT">LGBTQ+<br>
 			</div>	
 			<input type="text" name="Guardian" placeholder="Gurdian"><br>
 			<input type="tel" name="ContactNumber" placeholder="+639123456789"><br>
 			<input type="text" name="CivilStatus" placeholder="Civil Status"><br>
-				<input type="select" name="YearLevel" placeholder="Year Level"><br>
+			<input type="select" name="YearLevel" placeholder="Year Level"><br>
 			<input type="select" name="Course" placeholder="Course"><br>
 			<input type="text" name="SchoolYear" placeholder="School Year"><br>
 

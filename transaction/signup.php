@@ -1,5 +1,5 @@
 <?php 
-    include_once('../utilities/validation.php');
+    include('../utilities/validation.php');
 
     $Firstname = $_POST['fname'];
     $Middlename = $_POST['mname'];
@@ -7,11 +7,58 @@
     $Address = $_POST['address'];
     $DateOfBirth = $_POST['DOB'];
     $PlaceOfBirth = $_POST['POB'];
-    //$Gender = $_POST['Gender'];
-
-    if(validate($Firstname,$Middlename,$Lastname,$Address,$DateOfBirth,$PlaceOfBirth)){
-        echo "Password is ok";        
-    }else{
-        echo "Password is not accepted";
+    $Gender = $_POST['Gender'];
+    $Guardian = $_POST['Guardian'];
+    $ConNum = $_POST['ContactNumber'];
+    $CivStat = $_POST['CivilStatus'];
+    $Yrlvl = $_POST['YearLevel'];
+    $Course = $_POST['Course'];
+    $SchlYr = $_POST['SchoolYear'];
+    
+    $requiredFields = array($Firstname,
+    $Middlename,
+    $Lastname,
+    $Address,
+    $DateOfBirth,
+    $PlaceOfBirth,
+    $Gender,
+    $Guardian,
+    $ConNum,
+    $CivStat,
+    $Yrlvl,
+    $Course,
+    $SchlYr
+    );
+    $countEmp=0;
+    for($a = 0; $a != count($requiredFields); $a++){
+        if(isEmpty($requiredFields[$a])){
+            if ($a<3){
+                if(validate($requiredFields[$a])){
+                    continue;
+                }else{
+                    if ($a==0){
+                        echo "Firstname must not be empty or less than 2 characters.";
+                    }else if($a==2){
+                        echo "Lastname must not be empty or less than 2 characters.";
+                    }else{
+                        continue;
+                    }
+                }  
+            }else if ($a==8){
+                if(checkIntLenBegin($requiredFields[$a])){
+                    continue;
+                }else{
+                    echo "Please input a valid number.";
+                }
+            }else {
+                continue;
+            }
+        }else{
+            $countEmp++;
+        }
     }
+    if($countEmp!=0){
+        echo "Fields must not be empty.";
+    }
+
 ?>
