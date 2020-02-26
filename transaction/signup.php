@@ -37,9 +37,15 @@
                     continue;
                 }else{
                     if ($a==0){
-                        echo "Firstname must not be empty or less than 2 characters.";
+                        echo "Firstname must not be empty.<br> Must not be less than 2 characters. <br> Must not contain number. <br>";
+                    }else if($a==1){
+                        if(isString($requiredFields[$a])){
+                            echo "Middlename must not be empty.<br> Must not contain number. <br>";
+                        }else{
+                            continue;
+                        }
                     }else if($a==2){
-                        echo "Lastname must not be empty or less than 2 characters.";
+                        echo "Lastname must not be empty.<br> Must not be less than 2 characters. <br> Must not contain number. <br>";
                     }else{
                         continue;
                     }
@@ -48,7 +54,7 @@
                 if(checkIntLenBegin($requiredFields[$a])){
                     continue;
                 }else{
-                    echo "Please input a valid number.";
+                    echo "Please input a valid number.<br>";
                 }
             }else {
                 continue;
@@ -58,7 +64,7 @@
         }
     }
     if($countEmp!=0){
-        echo "Fields must not be empty.";
+        echo "Fields must not be empty.<br>";
     }
 
 ?>
